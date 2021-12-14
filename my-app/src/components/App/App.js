@@ -1,11 +1,12 @@
 import Profile from '../Profile/Profile'
-import user from '../Profile/user.json'
+import user from '../../data/user.json'
 import Statistics from '../Statistics/Statistics'
-import statistics from '../Statistics/data.json'
-import friends from '../FriendList/friends.json'
+import statistics from '../../data/data.json'
+import friends from '../../data/friends.json'
 import FriendList from '../FriendList/FriendList'
-import transactions from '../TransactionHistory/transactions.json'
+import transactions from '../../data/transactions.json'
 import TransactionHistory from '../TransactionHistory/TransactionHistory'
+
 
 export default function App() {
     return (
@@ -21,13 +22,9 @@ export default function App() {
             <Statistics
                title="Upload stats"
             stat={statistics}
-            />;
-    {friends.map(item =>
-    <FriendList
-        key = {item.id}
-        friends={item}
-      />
-)}
+            />
+            <FriendList
+                friends={friends} />
         <TransactionHistory
         items={transactions} />
         </div>

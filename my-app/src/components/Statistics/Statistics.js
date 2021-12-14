@@ -5,7 +5,9 @@ const Statistics = ({stat, title}) => {
 
   return (
         <section className={s.statistics} >
-      <h2 className={s.title}>{title ? (title) : ('')}</h2>
+      {title ?
+        (<h2 className={s.title}>{title}</h2>) :
+        ('')} 
       <ul className={s.statList}>
       {stat.map(stat => (
       <li className={s.item } key = {stat.id} style={{
@@ -22,7 +24,11 @@ const Statistics = ({stat, title}) => {
   }
     
 Statistics.propTypes = {
-  label: PropTypes.string,
-  percentage: PropTypes.number,
-};
+  title: PropTypes.string,
+  stat: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  }))
+}
 export default Statistics;
