@@ -8,11 +8,12 @@ import transactions from '../../data/transactions.json'
 import TransactionHistory from '../TransactionHistory/TransactionHistory'
 
 
+
 export default function App() {
     return (
      <div>
         <Profile
-            key={Math.random()}
+            key={user.id}
                 username={user.username}
                 tag={user.tag}
                 location={user.location}
